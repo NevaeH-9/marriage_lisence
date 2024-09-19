@@ -1,0 +1,59 @@
+---
+title: "Data of Marriage License Statistics"
+subtitle: "Finding the effect of pandemic to people getting marriage"
+author: 
+  - Yuanchen Miao
+thanks: "Code and data are available at: https://github.com/RohanAlexander and https://open.toronto.ca/dataset/marriage-licence-statistics/"
+date: 19 September 2024
+date-format: long
+abstract: "See the difference of the number of marriage lisence each month before/after the pandemic from the graph"
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+```
+
+
+# Introduction
+
+You can and should cross-reference sections and sub-sections. We use @vin, @opendatatoronto, and @rohan.
+
+The remainder of this paper is structured as follows. @sec-mydatasection
+
+
+
+\newpage
+
+# Data {#sec-mydatasection}
+
+Some of our data is of marriage lisence (@fig-marriage), from @opendatatoronto.
+
+```{r}
+#| label: fig-marriage
+#| fig-cap: Marriage license statistics in months
+#| echo: false
+
+data |> 
+  ggplot(aes(x = date, y = marriage_licenses)) +
+  geom_point()
+
+```
+
+
+
+\newpage
+
+
+# References
+
+
